@@ -3,23 +3,13 @@ import random
 
 
 class Account:
+    """keep data of account so that thing bring you to your wallet by using address as an intermediary
+     between user account with user of wallet"""
+
     def __init__(self, username, password, address):
+        """determine attributes of this class"""
         self.username = username
         self.password = password
-        self.address = address
-
-    def build_address(self):
-        list_number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-        list_ = []
-        address = ''
-        for i in range(65, 91):
-            list_.append(chr(i))
-        for i in range(97, 123):
-            list_.append(chr(i))
-        for j in list_number:
-            list_.append(j)
-        for i in range(46):
-            address += random.choice(list_)
         self.address = address
 
     @property
@@ -42,8 +32,32 @@ class Account:
             raise TypeError('password must to string')
         self.__password = other
 
-    def create_account(self):
+    def build_address(self):
+        """change self.address attribute of object to number and character big and small by all together of them
+        are 46 cheater and dump it to self.address object"""
+        list_number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        list_ = []
+        address = ''
+        for i in range(65, 91):
+            list_.append(chr(i))
+        for i in range(97, 123):
+            list_.append(chr(i))
+        for j in list_number:
+            list_.append(j)
+        for i in range(46):
+            address += random.choice(list_)
+        self.address = address
 
+    def create_account(self):
+        """
+        if your attribute password have numbers of characters more than or equal to 8  and it not all number only
+        and username have not in data_account json file (key)
+        it will create your account by keep data of account ,password, your_address with is attribute of class
+        in file data account and create object of class my_wallet by attributes have defeat is
+        self.your_address of object my_wallet is same self.address of this class(Account) , self.balance will be 0
+        and  self.token will be dict empty and save all together of object my_wallet in file wallet_data
+        if condition up there errors it will return the course of and errors in form string type.
+        """
         if len(self.password) >= 8 and not self.password.isnumeric():
 
             self.build_address()
@@ -95,6 +109,7 @@ class Account:
             return f'nope_less'
 
     def __repr__(self):
+        """determine attributes of this class"""
         return f'username : {self.username}' \
                f'password : {self.password}' \
                f'address  : {self.password}'

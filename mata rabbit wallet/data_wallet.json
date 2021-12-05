@@ -1,23 +1,29 @@
 {
     "JvNOZiQbCJziMdkZVOT5hkEQrOjW2zIqP1jP6iDkhUgjbx": {
-        "Balance": 100.0,
+        "Balance": 3.000000000013946e+20,
         "Your_Token": {}
     },
     "R0XprYuebmF1GUsoE8v7kiNI4Q7XKXCw3ahsxeiEoMtNu8": {
-        "Balance": 0,
+        "Balance": 30000.0,
         "Your_Token": {}
     },
     "ikkatnJkXKRorQx9et4V06hrYHzVk5cISUUTS1zE0JtSGm": {
-        "Balance": 4893.6,
+        "Balance": 5.000000049965002e+31,
         "Your_Token": {
             "ETH": {
-                "Amount": 0.23538716480867733,
-                "Total value": 1000.0
+                "Amount": 3.7697254444109674,
+                "Token value": 2.56,
+                "Total value": 16015.0
             },
             "XRP": {
-                "Amount": 1940.0,
+                "Amount": 6656.981132075472,
                 "Token value": 1.06,
-                "Total value": 3604.0
+                "Total value": 7056.400000000001
+            },
+            "DOGE": {
+                "Amount": 20211.474675033616,
+                "Token value": 0.2231,
+                "Total value": 5000.0
             }
         }
     },
@@ -36,11 +42,11 @@
         "Your_Token": {}
     },
     "eiHLNp5OevTWcJ8Swd6mlLJ02ca5DTg62SRmkLbwq76bZN": {
-        "Balance": 0,
+        "Balance": 30000.0,
         "Your_Token": {}
     },
     "O6XtwGDHkF3N439Pq3dVZl4KWJg71Nf9FYkUG7Xu9Ixkgr": {
-        "Balance": 0,
+        "Balance": 100000.0,
         "Your_Token": {}
     },
     "E8VD1i54lEbPSlkA2dUFGhX6NRfiGaUB3HoZ8qpfrewoab": {
@@ -54,11 +60,11 @@
         }
     },
     "JgvJu6WWlFL9JcMc9zB5QGfRKqRV8pRyAcKLmqmlnEfHb9": {
-        "Balance": 0,
+        "Balance": 4142.0,
         "Your_Token": {}
     },
     "UtITTBV2MwDHXsuyeqzE0kovuahangkue0VdDkkXXvWc6d": {
-        "Balance": 0,
+        "Balance": 50000.0,
         "Your_Token": {}
     },
     "okzUMWcYINTPCwQeARsBf9WKSOmAlb08g1PTj8dQEnpgDi": {
@@ -66,7 +72,7 @@
         "Your_Token": {}
     },
     "uvpCFOFaYMladgghYPWfsaFT8ZDiuNLEWih4AoCdtHAVye": {
-        "Balance": 0,
+        "Balance": 5000.0,
         "Your_Token": {}
     },
     "3yknuwHwUL357zYsgaDypyW9n1JvepYBkPCBNHU5RtyiFx": {
@@ -108,5 +114,85 @@
     "74Xc7muc8oR9z85Eu8hVp3GlnwYKVndGrHsrN4qMTtrXRx": {
         "Balance": 0,
         "Your_Token": {}
+    },
+    "1YSxlc0q1jb4bUwzgGoT0RugqQgnEatGKTifKMPof45XKW": {
+        "Balance": 0,
+        "Your_Token": {}
+    },
+    "gTnUAz32weIz79uVLLVKiRtoMPfqfIe0HTPLcywcZEB38P": {
+        "Balance": 1000.0,
+        "Your_Token": {}
+    },
+    "3v7oa8hEP13oe8nRDpq1H7Hvgt2FVYE1yfvxtyhkoDuBYb": {
+        "Balance": 0.0,
+        "Your_Token": {
+            "XRP": {
+                "Amount": 0,
+                "Token value": 1.06,
+                "Total value": 0.0
+            },
+            "ADA": {
+                "Amount": 0,
+                "Token value": 1.8,
+                "Total value": 0.0
+            },
+            "ETH": {
+                "Amount": 0,
+                "Token value": 4248.32,
+                "Total value": 0.0
+            }
+        }
+    },
+    "smE5ZcynaspA6T6sOo25EGtqmqBm4wnxpoc8Lz9HDXN3cW": {
+        "Balance": 33000.0,
+        "Your_Token": {}
+    },
+    "EpGduF3oLBfXremi2jXlmHsGQCTLWPPl4q38bkx6bjOzy2": {
+        "Balance": 777000.0,
+        "Your_Token": {}
+    },
+    "5Of1i8Xn8okwsn5UNgfu88ZJqnjF5tc8QG4msfhT2aoK6Z": {
+        "Balance": 1660.699999999997,
+        "Your_Token": {
+            "LTC": {
+                "Amount": 0,
+                "Token value": 215.22,
+                "Total value": 0.0
+            },
+            "DOGE": {
+                "Amount": 0,
+                "Token value": 0.2231,
+                "Total value": 0.0
+            },
+            "XRP": {
+                "Amount": 28068.20754716981,
+                "Token value": 1.06,
+                "Total value": 29752.300000000003
+            },
+            "ETH": {
+                "Amount": 4.707743296173547,
+                "Token value": 4248.32,
+                "Total value": 20000.0
+            }
+        }
+    },
+    "oouUNYGJK5SzTuwCodgjb5Eqj42PQrzqqwcBTqkEoMvwgW": {
+        "Balance": 0,
+        "Your_Token": {}
+    },
+    "Piu9zDjGbXp1JSAnQVCrIh2CTSHvYrj7KlF78XsBJsKhfJ": {
+        "Balance": 36000.0,
+        "Your_Token": {
+            "LTC": {
+                "Amount": 0,
+                "Token value": 215.22,
+                "Total value": 0.0
+            },
+            "SHIB": {
+                "Amount": 112032265.29240422,
+                "Token value": 4.463e-05,
+                "Total value": 5000.0
+            }
+        }
     }
 }

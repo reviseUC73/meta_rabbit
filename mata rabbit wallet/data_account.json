@@ -86,5 +86,37 @@
     "rwer": {
         "Password": "rwerefwefwefgwgggggg",
         "Wallet_address": "74Xc7muc8oR9z85Eu8hVp3GlnwYKVndGrHsrN4qMTtrXRx"
+    },
+    "breez": {
+        "Password": "riew2545",
+        "Wallet_address": "1YSxlc0q1jb4bUwzgGoT0RugqQgnEatGKTifKMPof45XKW"
+    },
+    "breez_": {
+        "Password": "admin1234",
+        "Wallet_address": "gTnUAz32weIz79uVLLVKiRtoMPfqfIe0HTPLcywcZEB38P"
+    },
+    "rew2": {
+        "Password": "riew2545",
+        "Wallet_address": "3v7oa8hEP13oe8nRDpq1H7Hvgt2FVYE1yfvxtyhkoDuBYb"
+    },
+    "test": {
+        "Password": "riew2545",
+        "Wallet_address": "smE5ZcynaspA6T6sOo25EGtqmqBm4wnxpoc8Lz9HDXN3cW"
+    },
+    "rew3": {
+        "Password": "riew2545",
+        "Wallet_address": "EpGduF3oLBfXremi2jXlmHsGQCTLWPPl4q38bkx6bjOzy2"
+    },
+    "show": {
+        "Password": "admin1234",
+        "Wallet_address": "5Of1i8Xn8okwsn5UNgfu88ZJqnjF5tc8QG4msfhT2aoK6Z"
+    },
+    "smyum": {
+        "Password": "admin1234",
+        "Wallet_address": "oouUNYGJK5SzTuwCodgjb5Eqj42PQrzqqwcBTqkEoMvwgW"
+    },
+    "somyum": {
+        "Password": "admin1234",
+        "Wallet_address": "Piu9zDjGbXp1JSAnQVCrIh2CTSHvYrj7KlF78XsBJsKhfJ"
     }
 }

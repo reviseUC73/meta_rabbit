@@ -14,9 +14,14 @@ def check_contract(contract):
 
 
 class my_wallet:
-    """create object by use data from file account , wallet access to object  """
+    """create object by use data from file account , wallet access to object by it will edit your data wallet
+    through your address of data account and address of data wallet"""
 
     def __init__(self, your_address, balance):
+        """
+        :param your_address: string
+        :param balance: int,float
+        """
         self.your_address = your_address
         self.balance = balance
         self.all_token = {}
@@ -52,6 +57,9 @@ class my_wallet:
         self.__all_token = other
 
     def save(self):
+        """
+        update or save and dump data to data_wallet(j.son files)
+        """
         with open('data_wallet.json', 'r') as file:
             data = json.load(file)
         for key, val in data.items():
@@ -68,10 +76,16 @@ class my_wallet:
             json.dump(data, file, indent=4)
 
     def deposit(self, values):
+        """
+        increase your balance of wallet and save it in data_wallet(j.son files)
+        """
         self.balance += values
         self.save()
 
     def withdraw(self, value):
+        """
+        decrease your balance of wallet and save it in data_wallet(j.son files)
+        """
         self.balance -= value
         self.save()
 
@@ -81,44 +95,121 @@ class my_wallet:
         list_address = [i for i in data]
         if address_transfer in list_address:
             for key, val in data.items():
-                wallet_transfer = my_wallet(key, data[key]['Balance'])
-                wallet_transfer.all_token = data[key]['Your_Token']
-                print(f'Convert to >>> {wallet_transfer.your_address}\n')
+                if key == address_transfer:
+                    wallet_transfer = my_wallet(key, data[key]['Balance'])
+                    wallet_transfer.all_token = data[key]['Your_Token']
+                    print(f'Convert to >>> {wallet_transfer.your_address}\n')
 
-                if self.balance >= values:
-                    wallet_transfer.deposit(values)
-                    self.withdraw(values)
-                    print(self)
-                else:
-                    print('Your balance account have not to do transactions')
-                break
+                    if self.balance >= values:
+                        print(wallet_transfer)
+                        wallet_transfer.deposit(values)
+                        self.withdraw(values)
+                        print(self)
+
+                    else:
+                        print('Your balance account have not to do transactions')
+                    break
         else:
             print('Address that you want to transfer,not found addresses.')
 
-    def import_token(self, contract):
-        token = Token()
-        token.add_token(contract)
-        if check_contract(contract)[0] not in self.all_token:
-            if token.token_name != '':
-                new_token = {
-                    token.token_name: {
-                        'Amount': token.amount,
-                        'Token value': token.price,
-                        'Total value': token.amount * token.price
-                    }
-                }
-                self.all_token.update(new_token)
-                self.save()
+    def balance_transfer_2(self, address_transfer, values):
+        """
+        input address that you want to transfer if it have in data of data wallet it will increase balance (by use
+        deposit method ) address_transfer and decrease your balance (use withdraw methods) but if conditions is False
+        it will return the course of and errors in form string type
+
+        :param address_transfer: str
+        :param values: int, float
+        :return: str
+        """
+        with open('data_wallet.json', 'r') as file:
+            data = json.load(file)
+        list_address = [i for i in data]
+        if address_transfer in list_address:
+            for key, val in data.items():
+                if key == address_transfer:
+                    wallet_transfer = my_wallet(key, data[key]['Balance'])
+                    wallet_transfer.all_token = data[key]['Your_Token']
+                    print(wallet_transfer)
+                    if self.balance >= values:
+                        wallet_transfer.deposit(values)
+                        self.withdraw(values)
+                        return 'yes'
+                    else:
+                        return 'Your balance account have not to do transactions'
+
         else:
-            print('Your account,already has a token type.')
+            return 'Address that you want to transfer,not found addresses.'
+
+    # def import_token(self, contract):
+    #     with open('address_token.csv', "r") as file:
+    #         task = csv.DictReader(file)
+    #         data = [i for i in task]
+    #     for i in data:
+    #         if i['contract'] == contract:
+    #             return i['token_name'], i['price']
+    #     token = Token()
+    #     token.add_token(contract)
+    #     if check_contract(contract)[0] not in self.all_token:
+    #         if token.token_name != '':
+    #             new_token = {
+    #                 token.token_name: {
+    #                     'Amount': token.amount,
+    #                     'Token value': token.price,
+    #                     'Total value': token.amount * token.price
+    #                 }
+    #             }
+    #             self.all_token.update(new_token)
+    #             self.save()
+    #             return 'complete'
+    #     else:
+    #         return 'Your account,already has a token type.'
+    #     pass
+
+    def import_token_(self, contract):
+        """
+        if contract that your input it has in address_token.csv and your wallet have not token type
+        it will add type of token in your wallet and update new token type dict of your object. and save data
+        in wallet data(json file) by use save method but if conditions is False
+        it will return the course of and errors in form string type
+        :param contract: str
+        """
+        list_ = []
+        with open('address_token.csv', "r") as file:
+            task = csv.DictReader(file)
+            data = [i for i in task]
+        for i in data:
+            if i['contract'] == contract:
+                list_.append(i['token_name'])
+                list_.append(i['price'])
+        if len(list_) == 0:
+            return f'This contract do not available in my meta rabbit please wait to my update'
+        else:
+            token = Token()
+            token.add_token(contract)
+            if check_contract(contract)[0] not in self.all_token:
+                if token.token_name != '':
+                    new_token = {
+                        token.token_name: {
+                            'Amount': token.amount,
+                            'Token value': token.price,
+                            'Total value': token.amount * token.price
+                        }
+                    }
+                    self.all_token.update(new_token)
+                    self.save()
+                    return 'complete'
+            else:
+                return 'Your account,already has a token type.'
         pass
 
     def login(self, username, password):
         """
-        create object of class my_wallet by use data from data_account
+        change data object of class my_wallet by input  username, password and check
+        account data if both correct data account it will change data of object by pull from data_wallet(json file)
+        that correct  address that in data account(json file) and data wallet(json file)
         :param username: str
         :param password: str
-        :return:
         """
         with open('data_account.json', 'r') as file:
             data_account = json.load(file)
@@ -128,6 +219,7 @@ class my_wallet:
                 data_wallet = json.load(file)
                 self.balance = data_wallet[self.your_address]["Balance"]
                 self.all_token = data_wallet[self.your_address]["Your_Token"]
+                print(self)
 
     def buy_token(self, name_token, price):
         if name_token in self.all_token.keys():
@@ -139,28 +231,70 @@ class my_wallet:
                     self.all_token[name_token]['Amount'] += token_box.amount
                     self.all_token[name_token]["Total value"] = self.all_token[name_token]['Amount'] * token_box.price
                     self.withdraw(price)
+
                 else:
-                    print('Your balance of you not enough to this Transaction.')
+                    return 'Your balance of you not enough to this Transaction.'
             else:
-                print('This order is canceled')
+                return 'This order is canceled'
         else:
-            print('Your wallet does not support this type of token.\n'
-                  'Please use Import Token function for increase type of token support.')
+            return 'Your wallet does not support this type of token.' \
+                   'Please use Import Token function for increase type of token support.'
+
+    def buy_token_(self, name_token, price):
+        """
+        create object of Token
+        input token name and price to buy by use increase_token method of Token class change data of object Token
+        check if your balance more than or equal price that you want to buy if all condition correct
+        increase amount type token that you buy and add total value of this token type (price token * amount of token)
+        and decrease your balance by refer price to your buy
+        but if conditions is False it will return the course of and errors in form string type
+        :param name_token:
+        :param price:
+        :return: str
+        """
+        if name_token in self.all_token.keys():
+            token_box = Token(name_token, 0)
+            token_box.increase_token(name_token, float(price))
+            print(f'You will get >>> {name_token} : {token_box.amount}')
+            if float(self.balance) >= price:
+                self.all_token[name_token]['Amount'] += token_box.amount
+                self.all_token[name_token]["Total value"] = self.all_token[name_token]['Amount'] * token_box.price
+                self.withdraw(price)
+                return 'complete'
+            else:
+                return 'Your balance of you not enough to this Transaction.'
+
+        else:
+            return 'Your wallet does not support this type of token.' \
+                   'Please use Import Token function for increase type of token support.'
 
     def sell_token(self, name_token, amount):
+        """
+        create object of Token
+        input token name and amount to sell if name token that your input have in your wallet(all taken) and amount that
+        you want sell less than or equal to amount that you have in my wallet it will decrease amount of token in the
+        your wallet that same name wit name_token that your parameter this methods and increase your balance by the
+        refer all value amount that your sell and increase by use deposit method and save in data wallet
+        but if conditions is False it will return the course of and errors in form string type
+        :param name_token: str
+        :param amount: int,float
+        :return: str
+        """
         if name_token in self.all_token.keys():
             if self.all_token[name_token]['Amount'] >= amount:
                 get_money = self.all_token[name_token]['Token value'] * amount
                 print(f'You will get >>> {name_token} : {get_money} USDT')
-                if input('Confirm Transaction (Y or N) >>>').upper() == "Y":
-                    self.all_token[name_token]['Amount'] -= amount
-                    self.deposit(get_money)
-                else:
-                    print('This order is canceled')
+
+                self.all_token[name_token]['Amount'] -= amount
+                self.deposit(get_money)
+                return 'complete'
             else:
-                print('Amount token of you not enough to sell in this transaction')
+                return 'Amount token of you not enough to sell in this transaction'
+        else:
+            return "This token does not exist in your wallet."
 
     def __repr__(self):
+        """represent all attributes of this class in form string """
         return f'Address : {self.your_address}\n' \
                f'Balance : {self.balance} USDT\n' \
                f'Token   : {self.all_token}'
