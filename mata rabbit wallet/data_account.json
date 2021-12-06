@@ -118,5 +118,17 @@
     "somyum": {
         "Password": "admin1234",
         "Wallet_address": "Piu9zDjGbXp1JSAnQVCrIh2CTSHvYrj7KlF78XsBJsKhfJ"
+    },
+    "qqqq": {
+        "Password": "riew02545",
+        "Wallet_address": "GrqY7fvURUjlDcGXf2TgrBTPYmdZqNJwyPcPwTD1JqP4Kc"
+    },
+    "ttt": {
+        "Password": "admin1234",
+        "Wallet_address": "lhcwnSY5KNqT7BLs90qmtbvo0RhwKDjcc26NcgVMuE2WiE"
+    },
+    "admin": {
+        "Password": "admin1234",
+        "Wallet_address": "l7fIrXpyjK7Iz1fuGyTCRHy4f7dSKkjLItP0z87KHF0SCp"
     }
 }
