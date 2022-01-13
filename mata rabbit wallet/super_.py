@@ -1,11 +1,12 @@
 from account import Account
 from wallet import my_wallet
-from turtle import Turtle
 from obj_display import Obj
+from turtle import Turtle
 
 
 class Super_run:
     """Bring the classes together and show them to the display page."""
+
     def __init__(self, your_screen):
         """determine attributes in this class"""
         self.username = ''
@@ -23,11 +24,13 @@ class Super_run:
         self.pencil_.hideturtle()
         self.party_dict = {'name': '', 'money': 0}
 
+    # These are method using for print the value of x and y to make the buttons
     def super_access(self, x, y):
         """
         It's a method used to specify a point in your screen that if you click that point your code will behave
         differently. by using together with onscreenclick() This will execute the login and register command,
         which is a method of class my_wallet.
+
         :param x: int,string
         :param y: int,string
         """
@@ -41,17 +44,15 @@ class Super_run:
             if user1.create_account() == 'complete':
                 text = 'Your account has been created successful'
                 pen.screen_text_pos(15, -300, text, '#32CD32', 13)
-
             elif user1.create_account() == 'nope_have':
                 text = 'This username has been used'
                 pen.screen_text_pos(15, -300, text, '#FF8C00', 12)
-
             elif user1.create_account() == 'nope_less':
                 text = 'Your password have to include number more than one and there \n         ' \
-                       'must be more than 6 numbers ' \
+                       'must be more than 8 numbers or equal' \
                        'and letters combined'
                 pen.screen_text_pos(15, -330, text, '#FFA500', 11)
-        # position of login bottom and condition of them
+        # position of login bottom and condition
         elif -120 <= x <= 140 and -165 <= y <= -115:
             self.username = self.your_screen.textinput("Login", 'Username :')
             self.password = self.your_screen.textinput("Login", 'Password : ')
@@ -76,7 +77,6 @@ class Super_run:
         self.your_screen.listen()
         self.obj.painter.pendown()
         self.obj_2.painter.setheading(0)
-        # self.obj_2.painter.showturtle()
         self.obj_2.draw_interface()
         self.obj_2.b_login()
         self.obj_2.b_register()
@@ -170,12 +170,12 @@ class Super_run:
             self.show_address_2()
             self.your_screen.onclick(self.chose_point)
 
+    # determine
     def chose_point(self, x, y):
         """
         when click button in screen 2 it show in each function by depend on position that your click
         :param x: integer,float
         :param y: integer,float
-
         """
         # deposits bottom use deposit methods of class my wallet and re-screen for show present data of my wallet
         if -120 <= x <= 150 and -88 <= y <= -30:

@@ -130,5 +130,61 @@
     "admin": {
         "Password": "admin1234",
         "Wallet_address": "l7fIrXpyjK7Iz1fuGyTCRHy4f7dSKkjLItP0z87KHF0SCp"
+    },
+    "ryu": {
+        "Password": "rew123456",
+        "Wallet_address": "jGQbLguyVkgQ6yKTGI7EmmfDCWKzmKS5lVt7lWMx5N7WSC"
+    },
+    "save": {
+        "Password": "admin1234",
+        "Wallet_address": "lB3hEMW9oUpjevr5nQ00TIZ14jmvEYMJjud44Aw51nIKnL"
+    },
+    "testtest": {
+        "Password": "admin1234",
+        "Wallet_address": "6arNzvzPsoAhRYOYBN34ceMnmzrp4yIS2stpxX84RVtIr9"
+    },
+    "rabbit test": {
+        "Password": "admin1234",
+        "Wallet_address": "4catmQNL2K5Hh9rFOJTytZTwvlEybfq5QtOpXUBN5MIcYN"
+    },
+    "ske rabbit": {
+        "Password": "admin1234",
+        "Wallet_address": "IkPGr9w5Zlc1H0R9BphhkJhE09eMphWabXPu1lFNgjAQfn"
+    },
+    "ske meta": {
+        "Password": "admin1234",
+        "Wallet_address": "HhNE6qAJ0mInix8yRYanSISFP5YvE3dEfelGI4gkt7ICra"
+    },
+    "ske": {
+        "Password": "admin1234",
+        "Wallet_address": "Csa8nyChB9aNjQGxy8l4U2qcdlwLDEmjwr99XrCbFU0HOq"
+    },
+    "ske_": {
+        "Password": "admin1234",
+        "Wallet_address": "nSa99Hyf6TU13zdNU8BrC8yOMFWvhg9RzQoBzFbHrDDEYF"
+    },
+    "ske19": {
+        "Password": "Riew1234",
+        "Wallet_address": "ZqZ3WLUDmo0ye2JtLNTgsKLfwXxE3EEQal7Sq4EPOA1l1B"
+    },
+    "ske19_": {
+        "Password": "admin1234",
+        "Wallet_address": "q7VPoJZ8ymvJJNXpPFcAcxkfBtllaH93EOBs0t3z5DCOfq"
+    },
+    "qq": {
+        "Password": "riew2545",
+        "Wallet_address": "LXmrnuwvFLCLRzNfzjRmqjik1HRSeUXuAcI8ug9qXteXTW"
+    },
+    "meak": {
+        "Password": "admin1234",
+        "Wallet_address": "KGTJ4wMUjcMygvQiLcM3RQbE1wuZP8wgJ0Xs0jK6Gk9TkU"
+    },
+    "ske19__": {
+        "Password": "admin1234",
+        "Wallet_address": "tw9ov3xyh1DeGXY1xPpuarvWK24YT6kvLnwuGUBFM8Sa2M"
+    },
+    "ske_kub": {
+        "Password": "admin1234",
+        "Wallet_address": "LSwabCxVcKG32IyvR3kfu65Ps0Gb8Wuyl9SSvhU2S9E9Gp"
     }
 }

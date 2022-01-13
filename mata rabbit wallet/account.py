@@ -105,7 +105,7 @@ class Account:
                     return f'complete'
         else:
             print('Your password have to include number more than one and there must be '
-                  'more than 6 numbers and letters combined')
+                  'more than 7 numbers and letters combined')
             return f'nope_less'
 
     def __repr__(self):

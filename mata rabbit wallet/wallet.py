@@ -1,20 +1,10 @@
 import json
 import csv
-
 from token_ import Token
 
 
-def check_contract(contract):
-    with open('address_token.csv', "r") as file:
-        task = csv.DictReader(file)
-        data = [i for i in task]
-    for i in data:
-        if i['contract'] == contract:
-            return i['token_name'], i['price']
-
-
 class my_wallet:
-    """create object by use data from file account , wallet access to object by it will edit your data wallet
+    """create object by the using data from file account , wallet access to object by it will edit your data wallet
     through your address of data account and address of data wallet"""
 
     def __init__(self, your_address, balance):
@@ -56,6 +46,7 @@ class my_wallet:
             raise TypeError('it must to class Wallet')
         self.__all_token = other
 
+    # save and update your transaction to data_wallet
     def save(self):
         """
         update or save and dump data to data_wallet(j.son files)
@@ -75,6 +66,25 @@ class my_wallet:
         with open('data_wallet.json', 'w') as file:
             json.dump(data, file, indent=4)
 
+    # access your account via file data wallet json.
+    def login(self, username, password):
+        """
+        change data object of class my_wallet by input  username, password and check
+        account data if both correct data account it will change data of object by pull from data_wallet(json file)
+        that correct  address that in data account(json file) and data wallet(json file)
+        :param username: str
+        :param password: str
+        """
+        with open('data_account.json', 'r') as file:
+            data_account = json.load(file)
+        if username in data_account and data_account[username]['Password'] == password:
+            self.your_address = data_account[username]["Wallet_address"]
+            with open('data_wallet.json', 'r') as file:
+                data_wallet = json.load(file)
+                self.balance = data_wallet[self.your_address]["Balance"]
+                self.all_token = data_wallet[self.your_address]["Your_Token"]
+                print(self)
+
     def deposit(self, values):
         """
         increase your balance of wallet and save it in data_wallet(j.son files)
@@ -82,35 +92,12 @@ class my_wallet:
         self.balance += values
         self.save()
 
-    def withdraw(self, value):
+    def withdraw(self, values):
         """
         decrease your balance of wallet and save it in data_wallet(j.son files)
         """
-        self.balance -= value
+        self.balance -= values
         self.save()
-
-    def balance_transfer(self, address_transfer, values):
-        with open('data_wallet.json', 'r') as file:
-            data = json.load(file)
-        list_address = [i for i in data]
-        if address_transfer in list_address:
-            for key, val in data.items():
-                if key == address_transfer:
-                    wallet_transfer = my_wallet(key, data[key]['Balance'])
-                    wallet_transfer.all_token = data[key]['Your_Token']
-                    print(f'Convert to >>> {wallet_transfer.your_address}\n')
-
-                    if self.balance >= values:
-                        print(wallet_transfer)
-                        wallet_transfer.deposit(values)
-                        self.withdraw(values)
-                        print(self)
-
-                    else:
-                        print('Your balance account have not to do transactions')
-                    break
-        else:
-            print('Address that you want to transfer,not found addresses.')
 
     def balance_transfer_2(self, address_transfer, values):
         """
@@ -141,31 +128,6 @@ class my_wallet:
         else:
             return 'Address that you want to transfer,not found addresses.'
 
-    # def import_token(self, contract):
-    #     with open('address_token.csv', "r") as file:
-    #         task = csv.DictReader(file)
-    #         data = [i for i in task]
-    #     for i in data:
-    #         if i['contract'] == contract:
-    #             return i['token_name'], i['price']
-    #     token = Token()
-    #     token.add_token(contract)
-    #     if check_contract(contract)[0] not in self.all_token:
-    #         if token.token_name != '':
-    #             new_token = {
-    #                 token.token_name: {
-    #                     'Amount': token.amount,
-    #                     'Token value': token.price,
-    #                     'Total value': token.amount * token.price
-    #                 }
-    #             }
-    #             self.all_token.update(new_token)
-    #             self.save()
-    #             return 'complete'
-    #     else:
-    #         return 'Your account,already has a token type.'
-    #     pass
-
     def import_token_(self, contract):
         """
         if contract that your input it has in address_token.csv and your wallet have not token type
@@ -187,7 +149,7 @@ class my_wallet:
         else:
             token = Token()
             token.add_token(contract)
-            if check_contract(contract)[0] not in self.all_token:
+            if list_[0] not in self.all_token:
                 if token.token_name != '':
                     new_token = {
                         token.token_name: {
@@ -202,43 +164,6 @@ class my_wallet:
             else:
                 return 'Your account,already has a token type.'
         pass
-
-    def login(self, username, password):
-        """
-        change data object of class my_wallet by input  username, password and check
-        account data if both correct data account it will change data of object by pull from data_wallet(json file)
-        that correct  address that in data account(json file) and data wallet(json file)
-        :param username: str
-        :param password: str
-        """
-        with open('data_account.json', 'r') as file:
-            data_account = json.load(file)
-        if username in data_account and data_account[username]['Password'] == password:
-            self.your_address = data_account[username]["Wallet_address"]
-            with open('data_wallet.json', 'r') as file:
-                data_wallet = json.load(file)
-                self.balance = data_wallet[self.your_address]["Balance"]
-                self.all_token = data_wallet[self.your_address]["Your_Token"]
-                print(self)
-
-    def buy_token(self, name_token, price):
-        if name_token in self.all_token.keys():
-            token_box = Token(name_token, 0)
-            token_box.increase_token(name_token, price)
-            print(f'You will get >>> {name_token} : {token_box.amount}')
-            if input('Confirm Transaction (Y or N) >>>').upper() == "Y":
-                if self.balance >= price:
-                    self.all_token[name_token]['Amount'] += token_box.amount
-                    self.all_token[name_token]["Total value"] = self.all_token[name_token]['Amount'] * token_box.price
-                    self.withdraw(price)
-
-                else:
-                    return 'Your balance of you not enough to this Transaction.'
-            else:
-                return 'This order is canceled'
-        else:
-            return 'Your wallet does not support this type of token.' \
-                   'Please use Import Token function for increase type of token support.'
 
     def buy_token_(self, name_token, price):
         """
@@ -286,6 +211,7 @@ class my_wallet:
                 print(f'You will get >>> {name_token} : {get_money} USDT')
 
                 self.all_token[name_token]['Amount'] -= amount
+                self.all_token[name_token]["Total value"] -= self.all_token[name_token]['Token value'] * amount
                 self.deposit(get_money)
                 return 'complete'
             else:

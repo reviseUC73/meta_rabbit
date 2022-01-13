@@ -9,7 +9,7 @@ meta mask crypto wallet.
 ### Requirement
 
 • __Required__ libraries and tools are `screen`, `turtle`, `json` , `csv` and `random`.
-
+(python 3.10)
 ### Logo
 
 ![rabbit](meta.gif) 
@@ -64,9 +64,20 @@ meta mask crypto wallet.
 
    ![address_token](token.jpg)
 
-### Show Display Screen
-`Login / Register  Screen `
-![access](login__.jpg)
-![dasd](your_wallet.jpg)
-admin
+### Show Test Program
+`Register `
+![register](registerr.gif) 
+
+
+`Login `
+![access](loginn.gif)
+
+
+
+`transfer`
+![transfer](transfer.gif)
+
+
+`Token_wallet`
+![Token](tokenme.gif)
 
