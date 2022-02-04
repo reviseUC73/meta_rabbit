@@ -2,13 +2,20 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/auction-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bankaccount-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/exam-1-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/exam-2-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/final-practice-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/flappydot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/functional-lab-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lab1-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/money-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/quiz1-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/recursion-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/wallet-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/wallet-reviseUC73/tests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/week10-assignment-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/week11-assignment-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/week12-assignment-reviseUC73" vcs="Git" />
