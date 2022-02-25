@@ -11,12 +11,16 @@
     <mapping directory="$PROJECT_DIR$/functional-lab-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/grep-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/hog-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/keypad-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lab1-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lab6-converter-reviseUC73" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lab7-stopwatch-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/money-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/patterns-lib-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/quiz1-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/recursion-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/unitconverter-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/wallet-reviseUC73" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/wallet-reviseUC73/tests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/week10-assignment-reviseUC73" vcs="Git" />
