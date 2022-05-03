@@ -380,5 +380,20 @@
                 "Total value": 12000.000000000004
             }
         }
+    },
+    "zfDRwo271e1TlIaIZWLFmQmjE7uEt8mtVYOIXHO0TODhLn": {
+        "Balance": 47000.0,
+        "Your_Token": {
+            "CRO": {
+                "Amount": 0,
+                "Token value": 0.7661,
+                "Total value": 0.0
+            },
+            "BTC": {
+                "Amount": 0.051502198972222114,
+                "Token value": 58249.94,
+                "Total value": 3000.0
+            }
+        }
     }
 }

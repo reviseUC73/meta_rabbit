@@ -186,5 +186,9 @@
     "ske_kub": {
         "Password": "admin1234",
         "Wallet_address": "LSwabCxVcKG32IyvR3kfu65Ps0Gb8Wuyl9SSvhU2S9E9Gp"
+    },
+    "pip": {
+        "Password": "riew2545",
+        "Wallet_address": "zfDRwo271e1TlIaIZWLFmQmjE7uEt8mtVYOIXHO0TODhLn"
     }
 }
